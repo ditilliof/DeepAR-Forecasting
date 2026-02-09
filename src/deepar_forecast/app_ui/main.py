@@ -401,7 +401,7 @@ def main():
     )
 
     # ── Dark-dashboard CSS ─────────────────────────────────────────────
-    st.markdown(\"\"\"
+    st.markdown("""
     <style>
     /* Card-like sections */
     div[data-testid="stVerticalBlock"] > div {
@@ -432,7 +432,7 @@ def main():
     /* Subheaders */
     h2, h3 { color: #e6edf3 !important; }
     </style>
-    \"\"\", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
     
     # Title and description
     st.title("🔮 DeepAR Price Forecasting")
@@ -614,14 +614,14 @@ def main():
             "🚀 Run Forecast",
             disabled=not can_run,
             type="primary",
-            use_container_width=True,
+            width="stretch",
         )
     
     with col2:
         if st.session_state.forecast_results:
             clear_button = st.button(
                 "🗑️ Clear Results",
-                use_container_width=True,
+                width="stretch",
             )
             if clear_button:
                 st.session_state.forecast_results = None
@@ -728,7 +728,7 @@ def main():
                 timeframe=params["timeframe"],
                 scale_mode=scale_mode,
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
             
             st.caption("""
             **How to read this chart:**
@@ -850,7 +850,7 @@ def main():
                     height=300,
                 )
                 
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
             
             st.markdown("**Raw Forecast Data**")
             
@@ -864,7 +864,7 @@ def main():
                 "Upper 95%": results["forecast"]["upper_95"],
             })
             
-            st.dataframe(forecast_df, use_container_width=True)
+            st.dataframe(forecast_df, width="stretch")
             
             # Download button
             csv = forecast_df.to_csv(index=False)

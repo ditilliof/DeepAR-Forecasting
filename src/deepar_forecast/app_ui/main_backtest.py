@@ -391,7 +391,7 @@ def main():
 
     col_btn, _ = st.columns([1, 3])
     with col_btn:
-        run_btn = st.button("🚀 Run Backtest", disabled=not can_run, type="primary", use_container_width=True)
+        run_btn = st.button("🚀 Run Backtest", disabled=not can_run, type="primary", width="stretch")
 
     if run_btn:
         with st.spinner("Running backtest pipeline…"):
@@ -467,7 +467,7 @@ def main():
         fc = res["forecast"]
         if hist_df is not None and not hist_df.empty and fc is not None:
             fig = create_backtest_plot(hist_df, fc, actual_df, sym, tf, cut, scale_mode=bt_scale)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
 
             st.caption(
                 "**Steel-blue** = historical  •  **Teal dashed** = forecast median  •  "
@@ -488,7 +488,7 @@ def main():
                     "Lower 95%": fc["lower_95"],
                     "Upper 95%": fc["upper_95"],
                 })
-                st.dataframe(fc_df, use_container_width=True)
+                st.dataframe(fc_df, width="stretch")
                 csv = fc_df.to_csv(index=False)
                 st.download_button("📥 Download CSV", csv, f"{sym}_{tf}_backtest.csv", "text/csv")
 
