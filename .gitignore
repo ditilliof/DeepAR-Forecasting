@@ -1,0 +1,84 @@
+# Local-only documentation (not committed)
+DeepAR Forecasting Machine Learning manual.md
+CHANGES.md
+CONTRIBUTING.md
+FILE_CLARIFICATION.md
+FIXES_APPLIED.md
+START_APP.md
+START_HERE.md
+docs/*.md
+
+# Test files (not committed)
+test_*.py
+tests/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data and models (root-level cached artefacts only, not src/)
+/data/
+/models/
+logs/
+*.db
+*.db-journal
+*.h5
+*.pth
+*.ckpt
+
+# Environment
+.env
+.env.local
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Ruff cache
+.ruff_cache/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
