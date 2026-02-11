@@ -5,7 +5,7 @@ Production-grade forecasting system for cryptocurrencies and ETFs using a determ
 ## Architecture
 
 ```
-src/deepar_forecast/
+src/rnn_forecast/
 ├── data/           # Data providers (CCXT, yfinance) + SQLite storage
 ├── features/       # Feature engineering (log-returns, indicators, no leakage)
 ├── models/         # RNN regressor with Huber loss, training loop
@@ -14,6 +14,8 @@ src/deepar_forecast/
 ├── app_api/        # FastAPI REST endpoints (/ingest, /train, /forecast, /backtest)
 └── app_ui/         # Streamlit dashboards (main forecast + backtest mode)
 ```
+
+> **Note:** The internal Python package name remains `deepar_forecast` (in imports and commands) to avoid refactoring the entire codebase. Only the project folder and GitHub repo are renamed to "RNN_forecast".
 
 ## Quick Start
 
